@@ -4,4 +4,19 @@
 
 body {
   font-family: $font-base;
+  background: #cccccc;
+}
+
+.container {
+  width: 1344px;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.decoration {
+  background: url("./../assets/Decoration.svg");
+  height: 33px;
+  width: 253px;
 }
