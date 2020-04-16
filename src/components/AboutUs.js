@@ -6,7 +6,7 @@ const AboutUs = () => {
     return (
         <div className={"wrapper"}>
             <div className={"aboutus"}>
-                <div>
+                <div className={"half-page"}>
                     <h2>O nas</h2>
                     <div className={"decoration"}></div>
                 </div>

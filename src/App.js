@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import {HashRouter, Switch, Route} from "react-router-dom";
 import Test from "./components/Test";
 import Home from "./components/Home";
@@ -9,20 +8,26 @@ import HeaderThreeColumns from "./components/HeaderThreeColumns";
 import FourSteps from "./components/FourSteps";
 import AboutUs from "./components/AboutUs";
 import WhoWeHelp from "./components/WhoWeHelp";
+import Navigation from "./components/Navigation";
+import ContactUs from "./components/ContactUs";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <HashRouter>
+        <Navigation/>
         <Header />
         <HeaderThreeColumns />
         <FourSteps />
         <AboutUs />
         <WhoWeHelp />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/test" component={Test} />
-        <Route path="/Login" component={Login} />
-      </Switch>
+        <ContactUs />
+        <Footer />
+      {/*<Switch>*/}
+      {/*  <Route exact path="/" component={Home} />*/}
+      {/*  <Route path="/test" component={Test} />*/}
+      {/*  <Route path="/Login" component={Login} />*/}
+      {/*</Switch>*/}
     </HashRouter>
   );
 }

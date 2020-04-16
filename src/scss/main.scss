@@ -5,6 +5,8 @@
 body {
   font-family: $font-base;
   background: #cccccc;
+  display: flex;
+  justify-content: center;
 }
 
 .container {
@@ -19,4 +21,8 @@ body {
   background: url("./../assets/Decoration.svg");
   height: 33px;
   width: 253px;
+}
+
+.half-page {
+  width: 50%;
 }

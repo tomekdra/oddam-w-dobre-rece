@@ -8,8 +8,6 @@ const Header = () => {
     return (
         <>
             <div className={'background-home'} />
-            <MenuLogin/>
-            <Menu/>
         </>
     )
 }
