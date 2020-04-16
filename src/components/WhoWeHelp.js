@@ -6,20 +6,36 @@ import Local from "./WhoWeHelp/Local";
 
 const WhoWeHelp = () => {
 
+    const possibleChoices = {
+        fundations: {
+            description: 'Lorem ipsum',
+            items: [
+                {who: '', purpose: '', what: ''},
+            ],
+        },
+        organizations: {},
+        local: {},
+    };
+    const currentChoose = possibleChoices.fundations;
+
+    const handleClick = (what) => {
+        // e.g what = 'fundations'
+        currentChoose = possibleChoices[what];
+    };
+
     return (
         <div className={"who-we-help"}>
             <h2>Komu pomagamy</h2>
             <div className={"decoration"}/>
-            <NavLink to={"/Fundation"}>Fundacje</NavLink>
-            <NavLink to={"/Organization"}>Organizacje</NavLink>
-            <NavLink to={"/Local"}>Locals</NavLink>
+            {/* ChooseButton ma emitowac na onClick wartosc ktora dostal w choice */}
+            <ChooseButton choice={'fundations'} onClick={e => handleClick(e)}></ChooseButton>
+            <ChooseButton choice={'organizations'} onClick={e => handleClick(e)}></ChooseButton>
+            <ChooseButton choice={'local'} onClick={e => handleClick(e)}></ChooseButton>
 
+            {currentChoose.description}
 
-                <Switch>
-                    <Route exact path="/Fundation" component={Fundations}/>
-                    <Route path="/Organization" component={Organizations}/>
-                    <Route path="/Local" component={Local}/>
-                </Switch>
+            {/* Zawiera liste itemow razem z paginacja */}
+            <ListWithPagination list={currentChoose.items}></ListWithPagination>
 
         </div>
     )
