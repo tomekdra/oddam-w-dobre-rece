@@ -1,16 +1,18 @@
 @import "reset";
 @import "settings/colors";
 @import "settings/fonts";
-@import "Navigation";
+@import "Menu";
 #root {
   width: 100%;
   position: relative;
+
 }
 body {
   font-family: $font-base;
-  background: #cccccc;
   display: flex;
   justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -25,7 +27,8 @@ body {
   background: url("./../assets/Decoration.svg");
   height: 33px;
   width: 253px;
-  margin: 0 auto;
+  margin: 20px auto;
+
 }
 
 .half-page {

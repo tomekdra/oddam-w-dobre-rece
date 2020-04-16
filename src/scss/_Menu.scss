@@ -1,12 +1,11 @@
 .navigation {
-  background: #b3d4fc;
   position: absolute;
   top: 1%;
   right: 2%;
 }
 
 .active {
-  border: 1px solid red;
+  border: 1px solid #000;
 }
 
 .menu-login {
@@ -34,5 +33,5 @@
 .button {
   padding: 5px 10px;
   margin: 5px;
-  background: #61dafb;
+  cursor: pointer;
 }

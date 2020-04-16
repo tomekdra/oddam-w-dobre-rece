@@ -1,18 +1,18 @@
 .header {
   height: 100vh;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .background-home {
   width: 50%;
   background-image: url("./../assets/Home-Hero-Image.jpg");
   background-repeat: no-repeat;
-  background-position: -600px 0;
+  background-position: right;
 }
 
 .start-help-box {
   width: 50%;
-  background: pink;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,4 +26,11 @@
 .header-title {
   text-align: center;
   display: block;
+}
+
+.header-buttons {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }

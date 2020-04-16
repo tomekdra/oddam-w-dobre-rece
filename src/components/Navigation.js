@@ -1,6 +1,6 @@
 import MenuLogin from "./Menu/MenuLogin";
 import Menu from "./Menu/Menu";
-import "./../scss/_Navigation.scss"
+import "../scss/_Menu.scss"
 import React from "react";
 
 const Navigation = () => {

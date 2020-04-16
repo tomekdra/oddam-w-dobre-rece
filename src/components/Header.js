@@ -14,7 +14,11 @@ const Header = () => {
                     <h2>Oddaj niechciane rzeczy w zaufane ręce</h2>
                 </span>
                 <div className={"decoration"}/>
-                <Button url={"/Login"} text={"Tresc butona"} />
+                <div className={"header-buttons"}>
+                    <Button url={"/Login"} text={`ODDAJ RZECZY`} />
+                    <Button url={"/Login"} text={"ZORGANIZUJ ZBIÓRKĘ"} />
+                </div>
+
                 </div>
             </div>
         </div>
