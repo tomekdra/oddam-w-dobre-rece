@@ -1,0 +1,29 @@
+.header {
+  height: 100vh;
+  display: flex;
+}
+
+.background-home {
+  width: 50%;
+  background-image: url("./../assets/Home-Hero-Image.jpg");
+  background-repeat: no-repeat;
+  background-position: -600px 0;
+}
+
+.start-help-box {
+  width: 50%;
+  background: pink;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.start-help-content {
+  text-align: center;
+  margin: auto;
+}
+
+.header-title {
+  text-align: center;
+  display: block;
+}

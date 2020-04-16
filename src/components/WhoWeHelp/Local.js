@@ -5,7 +5,7 @@ const Local = () => {
     return (
         <div>
             <p>Lokalnie</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, blanditiis molestiae. Amet cum earum error officia pariatur quam sequi tempora.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
         </div>
     )
 }

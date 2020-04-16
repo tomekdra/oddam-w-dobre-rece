@@ -1,7 +1,11 @@
 @import "reset";
 @import "settings/colors";
 @import "settings/fonts";
-
+@import "Navigation";
+#root {
+  width: 100%;
+  position: relative;
+}
 body {
   font-family: $font-base;
   background: #cccccc;
@@ -10,7 +14,7 @@ body {
 }
 
 .container {
-  width: 1344px;
+  width: 80%;
 }
 
 .wrapper {
@@ -21,6 +25,7 @@ body {
   background: url("./../assets/Decoration.svg");
   height: 33px;
   width: 253px;
+  margin: 0 auto;
 }
 
 .half-page {

@@ -1,5 +1,9 @@
 import React from "react";
 
-const Test = () => "Testing";
+const Test = () => {
+    return (
+        <h1>test</h1>
+    )
+}
 
 export default Test;

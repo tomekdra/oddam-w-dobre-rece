@@ -1,0 +1,38 @@
+.navigation {
+  background: #b3d4fc;
+  position: absolute;
+  top: 1%;
+  right: 2%;
+}
+
+.active {
+  border: 1px solid red;
+}
+
+.menu-login {
+  display: flex;
+  justify-content: flex-end;
+  a {
+    font-size: 14px;
+
+  }
+}
+
+.menu-content {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0;
+
+  a {
+    font-size: 18px;
+    &:hover {
+      border: 1px solid #000;
+    }
+  }
+}
+
+.button {
+  padding: 5px 10px;
+  margin: 5px;
+  background: #61dafb;
+}
