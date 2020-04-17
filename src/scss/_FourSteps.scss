@@ -1,0 +1,28 @@
+.four-steps {
+
+}
+
+%icon-size {
+  width: 83px;
+  height: 83px;
+  margin: 0 auto;
+}
+.icon-1 {
+  @extend %icon-size;
+  background: url("./../assets/Icon-1.svg") center/cover;
+}
+
+.icon-2 {
+  @extend %icon-size;
+  background: url("./../assets/Icon-2.svg") center/cover;
+}
+
+.icon-3 {
+  @extend %icon-size;
+  background: url("./../assets/Icon-3.svg") center/cover;
+}
+
+.icon-4 {
+  @extend %icon-size;
+  background: url("./../assets/Icon-4.svg") center/cover;
+}

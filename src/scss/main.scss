@@ -1,6 +1,8 @@
 @import "reset";
 @import "settings/colors";
 @import "settings/fonts";
+@import "HeaderThreeColumn";
+@import "FourSteps";
 @import "Menu";
 #root {
   width: 100%;
@@ -17,6 +19,8 @@ body {
 
 .container {
   width: 80%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .wrapper {
@@ -33,4 +37,21 @@ body {
 
 .half-page {
   width: 50%;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0;
+  min-height: 380px;
+
+  .col {
+    text-align: center;
+    width: 340px;
+    color: $color-2;
+    p {
+      font-weight: lighter;
+    }
+  }
 }
