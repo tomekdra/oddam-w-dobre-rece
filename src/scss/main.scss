@@ -1,9 +1,13 @@
 @import "reset";
 @import "settings/colors";
 @import "settings/fonts";
+@import "Header";
+@import "Menu";
 @import "HeaderThreeColumn";
 @import "FourSteps";
-@import "Menu";
+@import "AboutUs";
+@import "ContactUs";
+
 #root {
   width: 100%;
   position: relative;
@@ -16,6 +20,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 
 .container {
   width: 80%;

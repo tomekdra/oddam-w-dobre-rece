@@ -3,8 +3,53 @@
   display: flex;
 }
 
+.contactus-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 80%;
+}
+
 .contact-form-img {
   height: 100vh;
   width: 50%;
   background: url("./../assets/Background-Contact-Form.jpg") center/cover;
+}
+
+.contactus-items {
+
+}
+
+.contact-form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
+  text-align: left;
+  label {
+    line-height: 2;
+    font-weight: 600;
+  }
+  .textarea {
+    width: 100%;
+    textarea {
+      width: 100%;
+      font-family: "Open Sans", sans-serif;
+    }
+  }
+}
+
+.input-text {
+  display: block;
+  border: none;
+  padding: 5px 2px;
+  border-bottom: 1px solid $color-4;
+  margin: 5px 5px 20px 0;
+  font-size: 18px;
+  width: 95%;
+
+  &::placeholder {
+    color: rgba($color-4, .3);
+  }
 }
