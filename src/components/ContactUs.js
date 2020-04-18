@@ -1,5 +1,5 @@
 import React from "react";
-import ContactUsInputs from "../scss/ContactUsInputs";
+import ContactUsInputs from "./ContactUsInputs";
 
 
 const ContactUs = () => {
