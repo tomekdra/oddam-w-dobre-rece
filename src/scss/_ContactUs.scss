@@ -15,6 +15,7 @@
   height: 100vh;
   width: 50%;
   background: url("./../assets/Background-Contact-Form.jpg") center/cover;
+  opacity: 0.5;
 }
 
 .contactus-items {
@@ -24,6 +25,7 @@
 .contact-form {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   width: 80%;
   margin: 0 auto;
   text-align: left;

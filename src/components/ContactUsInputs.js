@@ -6,27 +6,24 @@ const ContactUsInputs = () => {
     const [message, setMessage] = useState('');
 
     const handleSubmit = e => {
-    e.preventDefault();
+        e.preventDefault();
 
-    let val = [];
-    let isValid = true;
+        const errors = [];
 
-    if(name.length < 3) {
-        isValid = false
-        val.push('Imię jest za krótkie.');
+        if(name.length < 3) {
+            errors.push('Imię jest za krótkie.');
+        }
+        if(email.length < 5) {
+            errors.push('Email jest za krótki.');
+        }
+
+        if(errors.length > 0) {
+            console.log(errors)
+        } else {
+            console.log("Wyslano")
+        }
+
     }
-    if(email.length < 5) {
-        isValid = false;
-        val.push('Email jest za krótki.');
-    }
-
-    if(isValid) {
-        console.log("Wyslano")
-    } else {
-        console.log(val)
-    }
-
-}
 
     return (
         <form onSubmit={handleSubmit} className={"contact-form"}>
