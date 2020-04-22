@@ -9,9 +9,8 @@ const ContactUsInputs = () => {
         e.preventDefault();
 
         const errors = [];
-        const regEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-
+// name validate
         if (name.length < 3) {
             errors.push('Imię jest za krótkie.');
             document.querySelector('input[name=\'name\']').classList.add('error');
@@ -21,8 +20,11 @@ const ContactUsInputs = () => {
             document.querySelector('.error-name').innerText = "";
         }
 
+// email validate
+        const regEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
         if (email.length < 5 || !regEmail.test(email)) {
-            errors.push('Email jest nieprawidlowy');
+            errors.push('Email jest nieprawidłowy');
             document.querySelector('input[name=\'email\']').classList.add('error');
             document.querySelector('.error-email').innerText = "Podany email jest nieprawidłowy!";
         } else {
@@ -30,6 +32,7 @@ const ContactUsInputs = () => {
             document.querySelector('.error-email').innerText = "";
         }
 
+// message validate
         if (message.length < 120) {
             errors.push("Wiadomość ma zawierać conajmniej 120 znaków")
             document.querySelector('textarea[name=\'message\']').classList.add('error');
@@ -39,20 +42,24 @@ const ContactUsInputs = () => {
             document.querySelector('.error-message').innerText = "";
         }
 
+// send or not form
         if (errors.length > 0) {
             console.log(errors)
         } else {
             console.log("Wyslano")
-            document.querySelector('.succes-send').innerText = "Wiadomość została wysłana \n Wkrótce się skontaktujemy."
-        }
+            document.querySelector('.succes-send').innerText = "Wiadomość została wysłana \n Wkrótce się skontaktujemy.";
 
+            setName('');
+            setEmail('');
+            setMessage('');
+        }
     }
 
     return (
         <form onSubmit={handleSubmit} className={"contact-form"}>
             <div className={"half-page"}>
                 <label>Wpisz swoje imię</label>
-                <input type="text" name={"name"} placeholder={"Podaj imię"} className={"input-text"}
+                <input type="text" name={"name"} value={name} placeholder={"Podaj imię"} className={"input-text"}
                        onChange={e => setName(e.target.value)}/>
                 <div className={"error-name"}></div>
             </div>

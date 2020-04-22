@@ -5,9 +5,8 @@ const MenuLogin = () => {
 
     return (
         <div className={"menu-login"}>
-            <NavLink to="/Login" className={"button"}>Zaloguj </NavLink>
-            <NavLink to="/" className={"button"}>Załóż konto</NavLink>
-
+            <NavLink to="/logowanie" className={"button"}>Zaloguj </NavLink>
+            <NavLink to="/rejestracja" className={"button"}>Załóż konto</NavLink>
         </div>
     )
 }
