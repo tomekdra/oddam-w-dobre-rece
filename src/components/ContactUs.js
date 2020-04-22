@@ -13,6 +13,7 @@ const ContactUs = () => {
                     <div className={"contactus-items"}>
                         <h2>Skontaktuj sie z nami</h2>
                         <div className={"decoration"}/>
+                        <div className="succes-send"></div>
                         <div className={"contactus-form"}>
                             <ContactUsInputs/>
                         </div>

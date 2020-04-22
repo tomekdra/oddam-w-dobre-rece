@@ -48,11 +48,29 @@
   border: none;
   padding: 5px 2px;
   border-bottom: 1px solid $color-4;
-  margin: 5px 5px 20px 0;
+  margin: 5px 5px 5px 0;
   font-size: 18px;
   width: 95%;
 
   &::placeholder {
     color: rgba($color-4, .3);
   }
+}
+
+.error {
+  border-bottom: 1px solid red;
+}
+
+
+.error-name, .error-email, .error-message {
+  color: red;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.succes-send {
+  color: green;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.3;
 }
