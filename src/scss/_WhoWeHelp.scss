@@ -13,3 +13,15 @@
 .whowehelp-buttons {
   display: flex;
 }
+
+.whowehelp-list {
+  text-align: left;
+
+  li {
+    border-bottom: 1px solid $color-4;
+    padding: 10px 0;
+  }
+  .whowehelp-what {
+    text-align: right;
+  }
+}

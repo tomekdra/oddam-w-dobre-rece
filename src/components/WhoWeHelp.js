@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import ChooseButton from "./WhoWeHelp/ChooseButton";
 import ListWithPagination from "./WhoWeHelp/ListWhithPagination";
-import possibleChoices from './helpChoices';
+import possibleChoices from './WhoWeHelp/helpChoices';
 
 const WhoWeHelp = () => {
 

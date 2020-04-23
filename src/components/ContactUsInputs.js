@@ -65,13 +65,13 @@ const ContactUsInputs = () => {
             </div>
             <div className={"half-page"}>
                 <label>Wpisz swój email</label>
-                <input type="email" name={"email"} placeholder={"adres@email"} className={"input-text"}
+                <input type="email" name={"email"} value={email} placeholder={"adres@email"} className={"input-text"}
                        onChange={e => setEmail(e.target.value)}/>
                 <div className={"error-email"}></div>
             </div>
             <div className={"textarea"}>
                 <label>Wpisz swoją wiadomość</label>
-                <textarea name="message"
+                <textarea name="message" value={message}
                           placeholder={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, repellat?"}
                           className={"input-text"} rows={"5"} onChange={e => setMessage(e.target.value)}/>
                 <div className={"error-message"}></div>
