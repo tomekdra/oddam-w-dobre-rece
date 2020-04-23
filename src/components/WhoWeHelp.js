@@ -6,8 +6,14 @@ import possibleChoices from './WhoWeHelp/helpChoices';
 const WhoWeHelp = () => {
 
     const [currentChoose, setCurrentChoose] = useState(possibleChoices.fundations);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postsPerPage] = useState(3);
 
     const handleClick = choice => setCurrentChoose(possibleChoices[choice]);
+
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const currentPosts = currentChoose.items.slice(indexOfFirstPost, indexOfLastPost)
 
     return (
         <div className={"container"}>
@@ -25,7 +31,7 @@ const WhoWeHelp = () => {
                 </div>
 
                 {/* Zawiera liste itemow razem z paginacja */}
-                <ListWithPagination list={currentChoose.items}></ListWithPagination>
+                <ListWithPagination list={currentPosts}></ListWithPagination>
 
             </div>
         </div>
