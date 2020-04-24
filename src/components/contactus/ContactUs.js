@@ -1,6 +1,6 @@
 import React from "react";
 import ContactUsInputs from "./ContactUsInputs";
-import Footer from "./Footer";
+import Footer from "../Footer";
 
 
 const ContactUs = () => {

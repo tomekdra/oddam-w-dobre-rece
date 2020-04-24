@@ -1,10 +1,10 @@
 import React from "react";
-import Header from "./Header";
-import HeaderThreeColumns from "./HeaderThreeColumns";
+import Header from "./header/Header";
+import HeaderThreeColumns from "./header/HeaderThreeColumns";
 import FourSteps from "./FourSteps";
 import AboutUs from "./AboutUs";
 import WhoWeHelp from "./WhoWeHelp";
-import ContactUs from "./ContactUs";
+import ContactUs from "./contactus/ContactUs";
 
 const Home = () => {
 

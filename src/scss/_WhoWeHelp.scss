@@ -1,5 +1,6 @@
 .whowehelp {
   margin: 50px 0;
+
 }
 .whowehelp-description {
   width: 640px;
@@ -12,16 +13,24 @@
 
 .whowehelp-buttons {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .whowehelp-list {
   text-align: left;
+  height: 280px;
 
   li {
     border-bottom: 1px solid $color-4;
     padding: 10px 0;
   }
+
   .whowehelp-what {
     text-align: right;
   }
+}
+
+.pagination-list {
+  display: flex;
+  justify-content: center;
 }

@@ -5,7 +5,7 @@ import {Link} from 'react-scroll'
 const Menu = () => {
 
     return (
-        <nav>
+        <nav className={"menu-top"}>
             <ul className={"menu-content"}>
                 <li><NavLink exact to="/" className={"button"} >Start</NavLink></li>
                 <li><Link to="four-steps" className={"button"} smooth={true} duration={1000}>O co chodzi?</Link></li>

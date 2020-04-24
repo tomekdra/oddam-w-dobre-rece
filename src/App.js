@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Login from "./components/Login";
 import MenuLogin from "./components/Menu/MenuLogin";
 import Menu from "./components/Menu/Menu";
+import Register from "./components/Register";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route path="/test" component={Test} />
             <Route path="/logowanie" component={Login} />
+            <Route path="/rejestracja" component={Register} />
           </Switch>
         </>
     </HashRouter>

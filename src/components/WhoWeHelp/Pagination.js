@@ -8,13 +8,12 @@ import React from "react";
         pageNumbers.push(i);
     }
     return (
-        <ul>
+        <ul className={"pagination-list"}>
             { pageNumbers.length > 1 && pageNumbers.map(number => (
                 <li key={number}>
                     <button onClick={() => paginate(number)}>{number}</button>
                 </li>
             ))}
-
         </ul>
     )
 }
