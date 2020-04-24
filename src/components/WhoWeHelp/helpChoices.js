@@ -27,6 +27,16 @@ export default {
                 purpose: 'Cel i misja: Lorem ipsum.',
                 what: 'ubrania, meble, zabawki, lorem, ipsum'
             },
+            {
+                who: 'Fundacja “Przed ostatnia”',
+                purpose: 'Cel i misja: Depresja u dzieci.',
+                what: 'Lorem ipsum dolor.'
+            },
+            {
+                who: 'Fundacja “Ostatnia”',
+                purpose: 'Cel i misja: Lorem ipsum.',
+                what: 'ubrania, meble, zabawki, lorem, ipsum'
+            }
         ],
     },
     organizations: {

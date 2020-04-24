@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import ChooseButton from "./WhoWeHelp/ChooseButton";
 import ListWithPagination from "./WhoWeHelp/ListWhithPagination";
 import possibleChoices from './WhoWeHelp/helpChoices';
+import Pagination from "./WhoWeHelp/Pagination";
 
 const WhoWeHelp = () => {
 
@@ -14,6 +15,8 @@ const WhoWeHelp = () => {
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentPosts = currentChoose.items.slice(indexOfFirstPost, indexOfLastPost)
+
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     return (
         <div className={"container"}>
@@ -32,7 +35,7 @@ const WhoWeHelp = () => {
 
                 {/* Zawiera liste itemow razem z paginacja */}
                 <ListWithPagination list={currentPosts}></ListWithPagination>
-
+                <Pagination postPerPage={postsPerPage} totalPost={currentChoose.items.length} paginate={paginate}/>
             </div>
         </div>
     )

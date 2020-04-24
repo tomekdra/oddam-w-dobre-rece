@@ -31,7 +31,7 @@ const FourSteps = () => {
                         <p>kurier przyjedzie w dogodnym terminie</p>
                     </div>
                 </div>
-                <Button url={"/Login"} text={"ODDAJ RZECZY"} />
+                <Button url={"/logowanie"} text={"ODDAJ RZECZY"} />
             </div>
         </div>
     )
