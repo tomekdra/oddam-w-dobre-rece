@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import Pagination from "./Pagination";
 
-const ListWithPagination = ({list, changeList}) => {
+const ListWithPagination = ({list}) => {
 
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(3);
