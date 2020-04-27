@@ -1,65 +1,65 @@
 import React, {useState} from "react";
+import {NavLink} from "react-router-dom";
 
 const Login = () => {
 
 
-    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [errEmail, setErrEmail] = useState('');
+    const [errPassword, setErrPassword] = useState('');
 
     const handleSubmit = e => {
+
         e.preventDefault();
 
-        const errors = [];
-
+        let isValid = true;
 // name validate
-        if (name.length < 3) {
-            errors.push('Email jest niepoprawny.');
-            document.querySelector('input[name=\'email\']').classList.add('error');
-            document.querySelector('.error-email').innerText = "Podane imię jest nieprawidłowe!";
-        } else {
-            document.querySelector('input[name=\'email\']').classList.remove('error');
-            document.querySelector('.error-email').innerText = "";
+        if (email.length < 3) {
+            setErrEmail('Podany email jest niepoprawny');
+            isValid = false;
         }
 
         if (password.length < 6) {
-            errors.push('Hasło jest nieprawidłowe');
-            document.querySelector('input[name=\'password\']').classList.add('error');
-            document.querySelector('.error-password').innerText = "Podane hasło jest niepoprawne!";
-        } else {
-            document.querySelector('input[name=\'password\']').classList.remove('error');
-            document.querySelector('.error-password').innerText = "";
+            setErrPassword('Podane hasło jest nieprawidłowe');
+            isValid = false;
+        }
+
+        if(isValid) {
+            console.log("send")
         }
     }
 
-    return (
-        <div className={"container"}>
-            <div className={"login-container"}>
-                <div>
-                    <h2>Zaloguj się</h2>
-                    <div className={"decoration"}/>
 
-                    <form onSubmit={handleSubmit} className={"login-form"}>
+        return (
+            <div className={"container"}>
+                <div className={"login-container"}>
+                    <div>
+                        <h2>Zaloguj się</h2>
+                        <div className={"decoration"}/>
 
-                        <label>Podaj email</label>
-                        <input type="text" name={"email"} placeholder={"Podaj email"} className={"input-text"}
-                               onChange={e => setName(e.target.value)}/>
-                        <div className={"error-email"}></div>
+                        <form onSubmit={handleSubmit} className={"login-form"}>
 
-                        <label>Podaj hasło</label>
-                        <input type="password" name={"password"} placeholder={"Podaj hasło"}
-                               className={"input-text"}
-                               onChange={e => setPassword(e.target.value)}/>
-                        <div className={"error-password"}></div>
+                            <label>Podaj email</label>
+                            <input type="text" name={"email"} placeholder={"Podaj email"} className={"input-text"}
+                                   onChange={e => setEmail(e.target.value)}/>
+                            <div className={"error-email"}>{errEmail}</div>
 
-                        <div>
-                            <input type="submit" value={"Wyślij"} className={"button"}/>
-                        </div>
+                            <label>Podaj hasło</label>
+                            <input type="password" name={"password"} placeholder={"Podaj hasło"}
+                                   className={"input-text"}
+                                   onChange={e => setPassword(e.target.value)}/>
+                            <div className={"error-password"}>{errPassword}</div>
 
-                    </form>
+                            <div className={"login-buttons"}>
+                                <input type="submit" value={"Zaloguj"} className={"button"}/><NavLink to="/rejestracja" className={"button"}>Załóż konto</NavLink>
+                            </div>
+
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    )
-};
+        )
+    };
 
-export default Login;
+    export default Login;

@@ -6,6 +6,7 @@ import Login from "./components/Login";
 import MenuLogin from "./components/Menu/MenuLogin";
 import Menu from "./components/Menu/Menu";
 import Register from "./components/Register";
+import Logout from "./components/Logout";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/test" component={Test} />
             <Route path="/logowanie" component={Login} />
             <Route path="/rejestracja" component={Register} />
+            <Route path="/wylogowano" component={Logout} />
           </Switch>
         </>
     </HashRouter>

@@ -17,6 +17,8 @@ const ContactUsInputs = () => {
         if (name.length < 3) {
             setErrName('Imię jest za krótkie.');
             isValid = false;
+        } else {
+            setErrName('');
         }
 
 // email validate
@@ -25,12 +27,16 @@ const ContactUsInputs = () => {
         if (email.length < 5 || !regEmail.test(email)) {
             setErrEmail('Email jest nieprawidłowy');
             isValid = false;
+        } else {
+            setErrEmail('');
         }
 
 // message validate
         if (message.length < 120) {
             setErrMessage("Wiadomość ma zawierać conajmniej 120 znaków");
             isValid = false;
+        } else {
+            setErrMessage('');
         }
 
 // send or not form
@@ -44,7 +50,7 @@ const ContactUsInputs = () => {
             setErrName('');
             setErrEmail('');
             setErrMessage('');
-            setSucces("Wiadomość została wysłana \n Wkrótce się skontaktujemy.")
+            setSucces("Wiadomość została wysłana. Wkrótce się skontaktujemy.")
         }
     }
 

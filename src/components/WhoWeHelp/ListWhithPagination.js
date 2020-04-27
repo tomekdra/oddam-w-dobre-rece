@@ -1,29 +1,42 @@
 import React, {useState} from "react";
 import Pagination from "./Pagination";
 
-const ListWithPagination = ({list}) => {
+class ListWithPagination extends React.Component {
 
-    const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage] = useState(3);
+    state = {
+        currentPage: 1,
+        postsPerPage: 3
+    };
+
+    paginate = (pageNumber) => this.setState({currentPage: pageNumber});
+
+    componentDidUpdate(prevProps) {
+        if(this.props.list !== prevProps.list) {
+            this.setState({currentPage: 1})
+        }
+    }
+
+    render() {
+        const indexOfLastPost = this.state.currentPage * this.state.postsPerPage;
+        const indexOfFirstPost = indexOfLastPost - this.state.postsPerPage;
+        const currentPosts = this.props.list.slice(indexOfFirstPost, indexOfLastPost);
+
+        return (
+            <div>
+                <ul className={"whowehelp-list"}>
+                    { currentPosts.map((el, index) => (
+                        <li key={index}><h4>{el.who}</h4><p>{el.purpose}</p>
+                            <div className={"whowehelp-what"}>{el.what}</div>
+                        </li>
+                    ))}
+                </ul>
+                <Pagination postPerPage={this.state.postsPerPage} totalPost={this.props.list.length}
+                            paginate={this.paginate}/>
+            </div>
+        )
+    }
 
 
-    const indexOfLastPost = currentPage * postsPerPage;
-    const indexOfFirstPost = indexOfLastPost - postsPerPage;
-    const currentPosts = list.slice(indexOfFirstPost, indexOfLastPost)
-
-    const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
-
-    return (
-        <div>
-            <ul className={"whowehelp-list"}>
-                { currentPosts.map((el, index) => (
-                    <li key={index}><h4>{el.who}</h4><p>{el.purpose}</p><div className={"whowehelp-what"}>{el.what}</div></li>
-                ))}
-            </ul>
-            <Pagination postPerPage={postsPerPage} totalPost={list.length} paginate={paginate} />
-        </div>
-    )
 }
 
 export default ListWithPagination;

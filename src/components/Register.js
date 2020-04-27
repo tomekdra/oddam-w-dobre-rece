@@ -1,45 +1,44 @@
 import React, {useState} from "react";
+import {NavLink} from "react-router-dom";
 
 const Register = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [validPassword, setValidPassword] = useState('')
+    const [validPassword, setValidPassword] = useState('');
+    const [errEmail, setErrEmail] = useState('');
+    const [errPassword, setErrPassword] = useState('');
+
 
     const handleSubmit = e => {
         e.preventDefault();
 
-        const errors = [];
-
+        let isValid = true;
 // name validate
         if (email.length < 3) {
-            errors.push('Email jest za krótkie.');
-            document.querySelector('input[name=\'email\']').classList.add('error');
-            document.querySelector('.error-email').innerText = "Podane Email jest nieprawidłowy!";
-        } else {
-            document.querySelector('input[name=\'email\']').classList.remove('error');
-            document.querySelector('.error-email').innerText = "";
+            setErrEmail("Podane Email jest nieprawidłowy!");
+            isValid = false;
         }
 
+//password validate
         if (password.length < 6) {
-            errors.push('Haslo niepoprawne');
-            document.querySelector('input[name=\'password\']').classList.add('error');
-            document.querySelector('.error-password').innerText = "Podane hasło jest niepoprawne!";
-        } else {
-            document.querySelector('input[name=\'password\']').classList.remove('error');
-            document.querySelector('.error-password').innerText = "";
+            setErrPassword("Podane hasło jest niepoprawne!");
+            isValid = false;
         }
 
+        if(validPassword !== password) {
+            setErrPassword("Hasła różnią sie od siebie");
+            isValid = false;
+        }
 
-
-        if(errors.length > 0) {
-            console.log("Bledy brak dzialania")
-        } else {
-            if (password === validPassword) {
-                console.log("ok")
-            } else {
-                console.log("rozne hasla")
-            }
+// send or not
+        if(isValid) {
+            console.log('done');
+            setEmail('');
+            setPassword('');
+            setValidPassword('');
+            setErrEmail('');
+            setErrPassword('');
         }
     }
 
@@ -55,25 +54,26 @@ const Register = () => {
                         <label>Wpisz swój email</label>
                     <input type="email" name={"email"} value={email} placeholder={"adres@email"} className={"input-text"}
                            onChange={e => setEmail(e.target.value)}/>
-                    <div className={"error-email"}></div>
+                    <div className={"error-email"}>{errEmail}</div>
 
                         <label>Podaj hasło</label>
                         <input type="password" name={"password"} value={password} placeholder={"Podaj hasło"}
                                className={"input-text"}
                                onChange={e => setPassword(e.target.value)}/>
-                        <div className={"error-password"}></div>
+                        <div className={"error-password"}>{errPassword}</div>
                         <label>Powtórz hasło</label>
                         <input type="password" name={"validPassword"} value={validPassword} placeholder={"Podaj ponownie hasło"}
                                className={"input-text"}
                                onChange={e => setValidPassword(e.target.value)}/>
-                        <div className={"error-password"}></div>
+                        <div className={"error-password"}>{errPassword}</div>
 
-                        <div>
-                            <input type="submit" value={"Wyślij"} className={"button"}/>
+                        <div className={"login-buttons"}>
+                            <input type="submit" value={"Załóż konto"} className={"button"}/><NavLink to="/logowanie" className={"button"}>Zaloguj </NavLink>
                         </div>
 
                     </form>
                 </div>
+
             </div>
         </div>
     )
