@@ -20,11 +20,13 @@ const Login = () => {
             isValid = false;
         }
 
+// password valid
         if (password.length < 6) {
             setErrPassword('Podane hasło jest nieprawidłowe');
             isValid = false;
         }
 
+// send or not
         if(isValid) {
             console.log("send")
         }

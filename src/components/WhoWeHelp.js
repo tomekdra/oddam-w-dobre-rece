@@ -9,8 +9,10 @@ class WhoWeHelp extends React.Component {
             currentChoose: possibleChoices.fundations
         }
 
+        // choose list from helpChoices
     handleClick = choice => this.setState({currentChoose: possibleChoices[choice]});
 
+        // check if isActive, made for styling button, ChoseButton
     isActive = choice => JSON.stringify(possibleChoices[choice]) === JSON.stringify(this.currentChoose);
 
     render() {

@@ -14,7 +14,7 @@ const Register = () => {
         e.preventDefault();
 
         let isValid = true;
-// name validate
+// email validate
         if (email.length < 3) {
             setErrEmail("Podane Email jest nieprawidłowy!");
             isValid = false;
@@ -41,7 +41,7 @@ const Register = () => {
             setErrPassword('');
         }
     }
-
+// crazy react inputs... ]:-[
     return (
         <div className={"container"}>
             <div className={"login-container"}>

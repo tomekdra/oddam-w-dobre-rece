@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import Pagination from "./Pagination";
 
 class ListWithPagination extends React.Component {
@@ -8,15 +8,18 @@ class ListWithPagination extends React.Component {
         postsPerPage: 3
     };
 
-    paginate = (pageNumber) => this.setState({currentPage: pageNumber});
+    // get pageNumber from Pagination component
+    paginate = (pageNumber) => this.setState({ currentPage: pageNumber });
 
+    // set first page in list of items in pagination when change list
     componentDidUpdate(prevProps) {
         if(this.props.list !== prevProps.list) {
-            this.setState({currentPage: 1})
+            this.setState({ currentPage: 1 })
         }
     }
 
     render() {
+        // slice list for setting how much show in list
         const indexOfLastPost = this.state.currentPage * this.state.postsPerPage;
         const indexOfFirstPost = indexOfLastPost - this.state.postsPerPage;
         const currentPosts = this.props.list.slice(indexOfFirstPost, indexOfLastPost);
@@ -31,7 +34,7 @@ class ListWithPagination extends React.Component {
                     ))}
                 </ul>
                 <Pagination postPerPage={this.state.postsPerPage} totalPost={this.props.list.length}
-                            paginate={this.paginate}/>
+                            paginate={this.paginate} />
             </div>
         )
     }
