@@ -18,17 +18,23 @@ const Login = () => {
         if (email.length < 3) {
             setErrEmail('Podany email jest niepoprawny');
             isValid = false;
+        } else {
+            setErrEmail('')
         }
 
 // password valid
         if (password.length < 6) {
             setErrPassword('Podane hasło jest nieprawidłowe');
             isValid = false;
+        } else {
+            setErrPassword('')
         }
 
 // send or not
         if(isValid) {
             console.log("send")
+            setEmail('');
+            setPassword('');
         }
     }
 
@@ -43,12 +49,12 @@ const Login = () => {
                         <form onSubmit={handleSubmit} className={"login-form"}>
 
                             <label>Podaj email</label>
-                            <input type="text" name={"email"} placeholder={"Podaj email"} className={"input-text"}
+                            <input type="text" name={"email"} value={email} placeholder={"Podaj email"} className={"input-text"}
                                    onChange={e => setEmail(e.target.value)}/>
                             <div className={"error-email"}>{errEmail}</div>
 
                             <label>Podaj hasło</label>
-                            <input type="password" name={"password"} placeholder={"Podaj hasło"}
+                            <input type="password" value={password} name={"password"} placeholder={"Podaj hasło"}
                                    className={"input-text"}
                                    onChange={e => setPassword(e.target.value)}/>
                             <div className={"error-password"}>{errPassword}</div>

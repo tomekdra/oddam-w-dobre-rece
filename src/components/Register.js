@@ -18,12 +18,16 @@ const Register = () => {
         if (email.length < 3) {
             setErrEmail("Podane Email jest nieprawidłowy!");
             isValid = false;
+        } else {
+            setErrEmail('')
         }
 
 //password validate
         if (password.length < 6) {
             setErrPassword("Podane hasło jest niepoprawne!");
             isValid = false;
+        } else {
+            setErrPassword('')
         }
 
         if(validPassword !== password) {
